@@ -63,6 +63,22 @@ spec:
               jsonnet: {}
               recurse: true
             repoURL: ""
+  - git:
+      repoURL: https://github.com/clegginabox/k8s-homelab.git
+      revision: main
+      files:
+        - path: apps/**/application.yaml
+      # When using a complete Application manifest you may not need to apply a template.
+      # You can simply use the file contents if the manifests are self-contained.
+      template:
+        # If you want to do minimal templating (or even override metadata), you can do so here.
+        metadata:
+          name: '{{ appName }}'
+        spec:
+          destination:
+            namespace: '{{ destNamespace }}'
+            server: '{{ destServer }}'
+          project: home
   syncPolicy: {}
   template:
     metadata:

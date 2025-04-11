@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-prometheus-stack
+  namespace: argocd
+spec:
+  project: home  # Assign this Application to your existing project
+  source:
+    repoURL: https://prometheus-community.github.io/helm-charts
+    chart: kube-prometheus-stack
+    targetRevision: latest   # or specify a chart version explicitly
+    helm:
+      # Optional: Specify a values file if needed
+      valueFiles:
+        - values.yaml
+      # Optional: Use `values` to override individual parameters
+      values: |
+        fullnameOverride: kube-prometheus-stack
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-prometheus-stack  # or choose your desired namespace
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
