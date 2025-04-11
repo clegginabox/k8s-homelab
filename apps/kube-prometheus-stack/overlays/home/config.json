@@ -6,8 +6,8 @@
   "destNamespace": "kube-prometheus-stack",
   "destServer": "https://kubernetes.default.svc",
   "srcRepoURL": "https://github.com/clegginabox/k8s-homelab.git",
-  "srcPath": "apps/kube-prometheus-stack/overlays/home",
   "srcTargetRevision": "main",
+  "srcPath": "apps/kube-prometheus-stack/overlays/home",
   "type": "helm",
   "chart": {
     "name": "kube-prometheus-stack",
