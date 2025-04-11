@@ -1,0 +1,17 @@
+{
+  "kind": "Config",
+  "apiVersion": "argoproj.io/v1alpha1",
+  "appName": "kube-prometheus-stack",
+  "userGivenName": "kube-prometheus-stack",
+  "destNamespace": "kube-prometheus-stack",
+  "destServer": "https://kubernetes.default.svc",
+  "srcRepoURL": "https://github.com/clegginabox/k8s-homelab.git",
+  "srcPath": "apps/kube-prometheus-stack/overlays/home",
+  "srcTargetRevision": "main",
+  "type": "helm",
+  "chart": {
+    "name": "kube-prometheus-stack",
+    "repoURL": "https://prometheus-community.github.io/helm-charts",
+    "version": "v0.81.0"
+  }
+}
