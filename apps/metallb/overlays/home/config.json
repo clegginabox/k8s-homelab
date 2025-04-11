@@ -1,7 +1,7 @@
 {
   "appName": "metallb",
   "userGivenName": "metallb",
-  "destNamespace": "metallb",
+  "destNamespace": "metallb-system",
   "destServer": "https://kubernetes.default.svc",
   "srcPath": "apps/metallb/overlays/home",
   "srcRepoURL": "https://github.com/clegginabox/k8s-homelab.git",
